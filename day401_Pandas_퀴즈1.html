@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Numpy_Quiz</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Pandas_퀴즈1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14279,18 +14279,20 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q1-&#45336;&#54028;&#51060;-&#47784;&#46280;&#51012;-np-&#48324;&#52845;&#51004;&#47196;-&#51076;&#54252;&#53944;&#54644;&#46972;">Q1 &#45336;&#54028;&#51060; &#47784;&#46280;&#51012; np &#48324;&#52845;&#51004;&#47196; &#51076;&#54252;&#53944;&#54644;&#46972;<a class="anchor-link" href="#Q1-&#45336;&#54028;&#51060;-&#47784;&#46280;&#51012;-np-&#48324;&#52845;&#51004;&#47196;-&#51076;&#54252;&#53944;&#54644;&#46972;">&#182;</a></h1>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 쥬피터노트북 셀 스타일 조절 </span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.container { font-weight: bold !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.container { width: 100% !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
+
+<span class="c1"># 경고 메세지 숨기기 </span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14298,91 +14300,50 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q2-&#45796;&#51020;&#44284;-&#44057;&#51008;-&#47532;&#49828;&#53944;&#47484;-&#51060;&#50857;&#54616;&#50668;">Q2 &#45796;&#51020;&#44284; &#44057;&#51008; &#47532;&#49828;&#53944;&#47484; &#51060;&#50857;&#54616;&#50668;<a class="anchor-link" href="#Q2-&#45796;&#51020;&#44284;-&#44057;&#51008;-&#47532;&#49828;&#53944;&#47484;-&#51060;&#50857;&#54616;&#50668;">&#182;</a></h1><h1 id="&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#47564;&#46308;&#44256;">&#45336;&#54028;&#51060; &#48176;&#50676;&#51012; &#47564;&#46308;&#44256;<a class="anchor-link" href="#&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#47564;&#46308;&#44256;">&#182;</a></h1><h1 id="&#51204;&#52404;-&#44079;&#49688;,-&#52264;&#50896;,-&#45936;&#51060;&#53552;&#54805;,-&#44396;&#51312;&#47484;-&#52636;&#47141;&#54616;&#50668;&#46972;">&#51204;&#52404; &#44079;&#49688;, &#52264;&#50896;, &#45936;&#51060;&#53552;&#54805;, &#44396;&#51312;&#47484; &#52636;&#47141;&#54616;&#50668;&#46972;<a class="anchor-link" href="#&#51204;&#52404;-&#44079;&#49688;,-&#52264;&#50896;,-&#45936;&#51060;&#53552;&#54805;,-&#44396;&#51312;&#47484;-&#52636;&#47141;&#54616;&#50668;&#46972;">&#182;</a></h1>
-<pre><code>['강아지', '원숭이', '꽃', '45', '100']
+<div class="jp-Cell-outputWrapper">
 
-array(['강아지', '원숭이', '꽃', '45', '100'], dtype='&lt;U3')
-차원 ? 1
-전체 갯수 ? 5
-데이터형 ? &lt;U3
-전체 구조  ? (5,)</code></pre>
 
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-OutputArea jp-Cell-outputArea">
 
-     </div>
-</div>
-</div>
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<style>.container { font-weight: bold !important; }</style>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+</div>
 
-     </div>
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<style>.container { width: 100% !important; }</style>
 </div>
+
 </div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q3-np.ones()&#47484;-&#51060;&#50857;&#54616;&#50668;">Q3 np.ones()&#47484; &#51060;&#50857;&#54616;&#50668;<a class="anchor-link" href="#Q3-np.ones()&#47484;-&#51060;&#50857;&#54616;&#50668;">&#182;</a></h1><h1 id="2&#54665;-3&#50676;&#51032;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54616;&#50668;&#46972;">2&#54665; 3&#50676;&#51032; &#45336;&#54028;&#51060; &#48176;&#50676;&#51012; &#49373;&#49457;&#54616;&#50668;&#46972;<a class="anchor-link" href="#2&#54665;-3&#50676;&#51032;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54616;&#50668;&#46972;">&#182;</a></h1>
-<pre><code>
-array([[1., 1., 1.],
-       [1., 1., 1.]])</code></pre>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
 
      </div>
@@ -14393,10 +14354,10 @@ array([[1., 1., 1.],
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ls data</span>
 </pre></div>
 
      </div>
@@ -14421,22 +14382,34 @@ array([[1., 1., 1.],
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q4.-np.arange(),-np.reshape()&#47484;-&#51060;&#50857;&#54616;&#50668;">Q4. np.arange(), np.reshape()&#47484; &#51060;&#50857;&#54616;&#50668;<a class="anchor-link" href="#Q4.-np.arange(),-np.reshape()&#47484;-&#51060;&#50857;&#54616;&#50668;">&#182;</a></h1><h1 id="&#45796;&#51020;&#44284;-&#44057;&#51008;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54616;&#50668;&#46972;">&#45796;&#51020;&#44284; &#44057;&#51008; &#45336;&#54028;&#51060; &#48176;&#50676;&#51012; &#49373;&#49457;&#54616;&#50668;&#46972;<a class="anchor-link" href="#&#45796;&#51020;&#44284;-&#44057;&#51008;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54616;&#50668;&#46972;">&#182;</a></h1>
-<pre><code>array([[51, 52, 53, 54, 55],
-       [56, 57, 58, 59, 60],
-       [61, 62, 63, 64, 65],
-       [66, 67, 68, 69, 70],
-       [71, 72, 73, 74, 75],
-       [76, 77, 78, 79, 80]])</code></pre>
+<h1 id="Q1-1">Q1-1<a class="anchor-link" href="#Q1-1">&#182;</a></h1>
+<pre><code>아래의 데이타를 이용하여 데이타프레임을 생성하여라.
+name_list는 인덱스로 이용한다. 
+
+data = {'kor':[40, 55, 66, 77, 34],
+        'math':[70, 55, 66, 20, 40],
+        'eng':[80, 95, 100, 77, 90]}
+
+name_list = ['고길동','김희동','신윤지','이민호','박준희']</code></pre>
+<h1 id="Q1-2">Q1-2<a class="anchor-link" href="#Q1-2">&#182;</a></h1>
+<pre><code>2명의 데이타를 추가하여라. 
+
+신머신 55  67  88
+윤파이 90  100 90</code></pre>
+<h1 id="Q1-3">Q1-3<a class="anchor-link" href="#Q1-3">&#182;</a></h1><p>sci 과목의 데이타를 추가하여라</p>
+<p>90, 45, 77, 90, 67, 90, 80</p>
+<h1 id="Q1-4">Q1-4<a class="anchor-link" href="#Q1-4">&#182;</a></h1><p>eng 과목에서 eng 평균점수보다 높은 학생은?</p>
+<h1 id="Q1-5">Q1-5<a class="anchor-link" href="#Q1-5">&#182;</a></h1>
+<pre><code>전체 과목의 평균을 구한 후 평균이상이면 O, 평균미만이면 X를 pass 컬럼에 출력하여라.</code></pre>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
 </pre></div>
 
      </div>
@@ -14444,184 +14417,126 @@ array([[1., 1., 1.],
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q5.-Q4&#51032;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51032;-&#51088;&#47308;&#54805;&#51012;">Q5. Q4&#51032; &#45336;&#54028;&#51060; &#48176;&#50676;&#51032; &#51088;&#47308;&#54805;&#51012;<a class="anchor-link" href="#Q5.-Q4&#51032;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51032;-&#51088;&#47308;&#54805;&#51012;">&#182;</a></h1><h1 id="float&#47196;-&#48320;&#44221;&#54616;&#44256;-&#45936;&#51060;&#53552;&#54805;&#51012;-&#52636;&#47141;&#54616;&#50668;&#46972;">float&#47196; &#48320;&#44221;&#54616;&#44256; &#45936;&#51060;&#53552;&#54805;&#51012; &#52636;&#47141;&#54616;&#50668;&#46972;<a class="anchor-link" href="#float&#47196;-&#48320;&#44221;&#54616;&#44256;-&#45936;&#51060;&#53552;&#54805;&#51012;-&#52636;&#47141;&#54616;&#50668;&#46972;">&#182;</a></h1>
-<pre><code>
-array([[51., 52., 53., 54., 55.],
-       [56., 57., 58., 59., 60.],
-       [61., 62., 63., 64., 65.],
-       [66., 67., 68., 69., 70.],
-       [71., 72., 73., 74., 75.],
-       [76., 77., 78., 79., 80.]])
-
--------------------------------------  
-
-dtype('float64')</code></pre>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q6.-&#45796;&#51020;&#44284;-&#44057;&#51060;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54620;-&#54980;">Q6. &#45796;&#51020;&#44284; &#44057;&#51060; &#45336;&#54028;&#51060; &#48176;&#50676;&#51012; &#49373;&#49457;&#54620; &#54980;<a class="anchor-link" href="#Q6.-&#45796;&#51020;&#44284;-&#44057;&#51060;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54620;-&#54980;">&#182;</a></h1><h1 id="1&#52264;&#50896;-&#48176;&#50676;&#47196;-&#48320;&#44221;&#54616;&#44256;-&#49836;&#46972;&#51060;&#49905;&#54616;&#50668;&#46972;">1&#52264;&#50896; &#48176;&#50676;&#47196; &#48320;&#44221;&#54616;&#44256; &#49836;&#46972;&#51060;&#49905;&#54616;&#50668;&#46972;<a class="anchor-link" href="#1&#52264;&#50896;-&#48176;&#50676;&#47196;-&#48320;&#44221;&#54616;&#44256;-&#49836;&#46972;&#51060;&#49905;&#54616;&#50668;&#46972;">&#182;</a></h1>
-<pre><code>array([[ 1,  4,  5,  6],
-       [56, 23, 45, 67],
-       [ 8,  4,  6, 10]])
-
-array([ 1,  4,  5,  6, 56, 23, 45, 67,  8,  4,  6, 10])
+<div class="jp-Cell-outputWrapper">
 
 
-array([23, 45, 67,  8,  4,  6])</code></pre>
+<div class="jp-OutputArea jp-Cell-outputArea">
 
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-OutputArea-child">
 
-     </div>
-</div>
-</div>
-</div>
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
 
-     </div>
-</div>
-</div>
-</div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-     </div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>kor</th>
+      <th>math</th>
+      <th>eng</th>
+      <th>sci</th>
+      <th>tot</th>
+      <th>avg</th>
+      <th>pass</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>고길동</th>
+      <td>40</td>
+      <td>70</td>
+      <td>80</td>
+      <td>90</td>
+      <td>280</td>
+      <td>70.00</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <th>김희동</th>
+      <td>55</td>
+      <td>55</td>
+      <td>95</td>
+      <td>45</td>
+      <td>250</td>
+      <td>62.50</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <th>신윤지</th>
+      <td>66</td>
+      <td>66</td>
+      <td>100</td>
+      <td>77</td>
+      <td>309</td>
+      <td>77.25</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>이민호</th>
+      <td>77</td>
+      <td>20</td>
+      <td>77</td>
+      <td>90</td>
+      <td>264</td>
+      <td>66.00</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <th>박준희</th>
+      <td>34</td>
+      <td>40</td>
+      <td>90</td>
+      <td>67</td>
+      <td>231</td>
+      <td>57.75</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <th>신머신</th>
+      <td>55</td>
+      <td>67</td>
+      <td>88</td>
+      <td>90</td>
+      <td>300</td>
+      <td>75.00</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>윤파이</th>
+      <td>90</td>
+      <td>100</td>
+      <td>90</td>
+      <td>80</td>
+      <td>360</td>
+      <td>90.00</td>
+      <td>O</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q7.-&#45796;&#51020;&#44284;-&#44057;&#51008;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54620;-&#54980;">Q7. &#45796;&#51020;&#44284; &#44057;&#51008; &#45336;&#54028;&#51060; &#48176;&#50676;&#51012; &#49373;&#49457;&#54620; &#54980;<a class="anchor-link" href="#Q7.-&#45796;&#51020;&#44284;-&#44057;&#51008;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54620;-&#54980;">&#182;</a></h1><h1 id="&#50500;&#51060;&#53596;&#51012;-&#44368;&#52404;&#54616;&#50668;&#46972;">&#50500;&#51060;&#53596;&#51012; &#44368;&#52404;&#54616;&#50668;&#46972;<a class="anchor-link" href="#&#50500;&#51060;&#53596;&#51012;-&#44368;&#52404;&#54616;&#50668;&#46972;">&#182;</a></h1>
-<pre><code>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
-
-array([10,  2,  3,  4,  5,  6,  7,  0,  0,  0])</code></pre>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
 
-     </div>
-</div>
-</div>
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14669,18 +14584,32 @@ array([10,  2,  3,  4,  5,  6,  7,  0,  0,  0])</code></pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q8.-2&#51088;&#47532;&#51032;-&#49707;&#51088;&#47196;-&#44396;&#49457;&#46108;-&#45336;&#54028;&#51060;-&#48176;&#50676;(5&#54665;5&#50676;)&#51012;-&#47564;&#46308;&#50612;&#46972;.">Q8. 2&#51088;&#47532;&#51032; &#49707;&#51088;&#47196; &#44396;&#49457;&#46108; &#45336;&#54028;&#51060; &#48176;&#50676;(5&#54665;5&#50676;)&#51012; &#47564;&#46308;&#50612;&#46972;.<a class="anchor-link" href="#Q8.-2&#51088;&#47532;&#51032;-&#49707;&#51088;&#47196;-&#44396;&#49457;&#46108;-&#45336;&#54028;&#51060;-&#48176;&#50676;(5&#54665;5&#50676;)&#51012;-&#47564;&#46308;&#50612;&#46972;.">&#182;</a></h1><h1 id="&#49707;&#51088;&#45716;-&#45212;&#49688;&#47484;-&#51060;&#50857;&#54620;&#45796;.">&#49707;&#51088;&#45716; &#45212;&#49688;&#47484; &#51060;&#50857;&#54620;&#45796;.<a class="anchor-link" href="#&#49707;&#51088;&#45716;-&#45212;&#49688;&#47484;-&#51060;&#50857;&#54620;&#45796;.">&#182;</a></h1>
-<pre><code>[[63 85 71 67 15]
- [31 81 69 17 97]
- [25 41 33 23 39]
- [39 43 59 33 43]
- [23 51 65 91 23]]</code></pre>
+<h2 id="Q-2-1">Q 2-1<a class="anchor-link" href="#Q-2-1">&#182;</a></h2><p>아래의 리스트를 이용하여 df_student 데이타프레임을 생성하여라</p>
+
+<pre><code>student_list = [ { 'name' : 'John', 'major' : 'Computer Science', 'gender' : 'male'},
+                 { 'name' : 'Nate', 'major' : 'Computer Science', 'gender' : 'male'},
+                 { 'name' : 'Abrabam', 'major' : 'Physics', 'gender' : 'male'},
+                 { 'name' : 'Brian', 'major' : 'Psychology', 'gender' : 'male'},
+                 { 'name' : 'Jenny', 'major' : 'Economics', 'gender' : 'female'},
+                 { 'name' : 'Yuba', 'major' : 'Economics', 'gender' : 'female'},
+                 { 'name' : 'Jennifer', 'major' : 'Computer Science', 'gender' : 'female'},
+                 { 'name' : 'Edward', 'major' : 'Computer Science', 'gender' : 'male'},
+                 { 'name' : 'Sara', 'major' : 'Psychology', 'gender' : 'female'},
+                 { 'name' : 'Wendy', 'major' : 'Economics', 'gender' : 'female'},
+                 { 'name' : 'Sera', 'major' : 'Psychology', 'gender' : 'female'}
+               ]</code></pre>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q-2-2">Q 2-2<a class="anchor-link" href="#Q-2-2">&#182;</a></h2><p>df_student 데이타프레임의 인덱스를 std1 ~ std11 형태로 변경하여라</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
@@ -14691,10 +14620,130 @@ array([10,  2,  3,  4,  5,  6,  7,  0,  0,  0])</code></pre>
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>major</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>std1</th>
+      <td>John</td>
+      <td>Computer Science</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>std2</th>
+      <td>Nate</td>
+      <td>Computer Science</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>std3</th>
+      <td>Abrabam</td>
+      <td>Physics</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>std4</th>
+      <td>Brian</td>
+      <td>Psychology</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>std5</th>
+      <td>Jenny</td>
+      <td>Economics</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std6</th>
+      <td>Yuba</td>
+      <td>Economics</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std7</th>
+      <td>Jennifer</td>
+      <td>Computer Science</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std8</th>
+      <td>Edward</td>
+      <td>Computer Science</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>std9</th>
+      <td>Sara</td>
+      <td>Psychology</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std10</th>
+      <td>Wendy</td>
+      <td>Economics</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std11</th>
+      <td>Sera</td>
+      <td>Psychology</td>
+      <td>female</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q-2-3">Q 2-3<a class="anchor-link" href="#Q-2-3">&#182;</a></h2><p>df_student 데이타프레임에서 gender 컬럼이 female 값을 가진 데이타만 별도로 데이타프레임 df_student_female 로 생성하여라.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
@@ -14703,6 +14752,583 @@ array([10,  2,  3,  4,  5,  6,  7,  0,  0,  0])</code></pre>
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>major</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>std5</th>
+      <td>Jenny</td>
+      <td>Economics</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std6</th>
+      <td>Yuba</td>
+      <td>Economics</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std7</th>
+      <td>Jennifer</td>
+      <td>Computer Science</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std9</th>
+      <td>Sara</td>
+      <td>Psychology</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std10</th>
+      <td>Wendy</td>
+      <td>Economics</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>std11</th>
+      <td>Sera</td>
+      <td>Psychology</td>
+      <td>female</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q-2-4">Q 2-4<a class="anchor-link" href="#Q-2-4">&#182;</a></h2><p>df_student_female 데이타프레임에서 name 컬럼을 인덱스로 설정하고 gender 컬럼을 삭제하여라</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>major</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Jenny</th>
+      <td>Economics</td>
+    </tr>
+    <tr>
+      <th>Yuba</th>
+      <td>Economics</td>
+    </tr>
+    <tr>
+      <th>Jennifer</th>
+      <td>Computer Science</td>
+    </tr>
+    <tr>
+      <th>Sara</th>
+      <td>Psychology</td>
+    </tr>
+    <tr>
+      <th>Wendy</th>
+      <td>Economics</td>
+    </tr>
+    <tr>
+      <th>Sera</th>
+      <td>Psychology</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q-2-5">Q 2-5<a class="anchor-link" href="#Q-2-5">&#182;</a></h2><p>df_student 데이타프레임에서 'Computer Science' 과를 제외한 나머지 데이타로 데이타프레임 df_student2를 생성하여라. 이때 인덱스는 name 컬럼으로 변경한다</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[81]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[81]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>major</th>
+      <th>gender</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Abrabam</th>
+      <td>Physics</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>Brian</th>
+      <td>Psychology</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>Jenny</th>
+      <td>Economics</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>Yuba</th>
+      <td>Economics</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>Sara</th>
+      <td>Psychology</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>Wendy</th>
+      <td>Economics</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>Sera</th>
+      <td>Psychology</td>
+      <td>female</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q-2-6">Q 2-6<a class="anchor-link" href="#Q-2-6">&#182;</a></h2><p>df_student2 에서 Brian, Sara의 데이타를 삭제하고 grade 컬럼을 추가하여라</p>
+<p>4.5, 4.0, 3.5, 4.0, 3.0</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[83]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[83]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>major</th>
+      <th>gender</th>
+      <th>grade</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Abrabam</th>
+      <td>Physics</td>
+      <td>male</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>Jenny</th>
+      <td>Economics</td>
+      <td>female</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Yuba</th>
+      <td>Economics</td>
+      <td>female</td>
+      <td>3.5</td>
+    </tr>
+    <tr>
+      <th>Wendy</th>
+      <td>Economics</td>
+      <td>female</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Sera</th>
+      <td>Psychology</td>
+      <td>female</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q-2-7">Q 2-7<a class="anchor-link" href="#Q-2-7">&#182;</a></h2><p>df_student2 데이타프레임에서 grade 컬럼명을 score로 변경하고 <br>
+전체 컬럼 순서를 gender, score, major 순서로 변경하여라</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[86]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[86]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gender</th>
+      <th>score</th>
+      <th>major</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Abrabam</th>
+      <td>male</td>
+      <td>4.5</td>
+      <td>Physics</td>
+    </tr>
+    <tr>
+      <th>Jenny</th>
+      <td>female</td>
+      <td>4.0</td>
+      <td>Economics</td>
+    </tr>
+    <tr>
+      <th>Yuba</th>
+      <td>female</td>
+      <td>3.5</td>
+      <td>Economics</td>
+    </tr>
+    <tr>
+      <th>Wendy</th>
+      <td>female</td>
+      <td>4.0</td>
+      <td>Economics</td>
+    </tr>
+    <tr>
+      <th>Sera</th>
+      <td>female</td>
+      <td>3.0</td>
+      <td>Psychology</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q-2-8">Q 2-8<a class="anchor-link" href="#Q-2-8">&#182;</a></h2><p>df_student2.describe() 명령을 이용하여 아래와 같이 출력하여라</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[78]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[78]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>3.8</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.5</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14736,17 +15362,17 @@ array([10,  2,  3,  4,  5,  6,  7,  0,  0,  0])</code></pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q9.-1~100-&#49324;&#51060;&#51032;-&#51221;&#49688;&#51473;-7&#44060;&#51032;-&#49707;&#51088;&#47484;-&#47924;&#51089;&#50948;&#47196;-&#52628;&#52636;&#54620;-&#54980;-&#44032;&#51109;-&#53360;&#44050;&#44284;-&#44032;&#51109;-&#51089;&#51008;-&#44050;&#51012;-&#52636;&#47141;&#54616;&#50668;&#46972;.">Q9. 1~100 &#49324;&#51060;&#51032; &#51221;&#49688;&#51473; 7&#44060;&#51032; &#49707;&#51088;&#47484; &#47924;&#51089;&#50948;&#47196; &#52628;&#52636;&#54620; &#54980; &#44032;&#51109; &#53360;&#44050;&#44284; &#44032;&#51109; &#51089;&#51008; &#44050;&#51012; &#52636;&#47141;&#54616;&#50668;&#46972;.<a class="anchor-link" href="#Q9.-1~100-&#49324;&#51060;&#51032;-&#51221;&#49688;&#51473;-7&#44060;&#51032;-&#49707;&#51088;&#47484;-&#47924;&#51089;&#50948;&#47196;-&#52628;&#52636;&#54620;-&#54980;-&#44032;&#51109;-&#53360;&#44050;&#44284;-&#44032;&#51109;-&#51089;&#51008;-&#44050;&#51012;-&#52636;&#47141;&#54616;&#50668;&#46972;.">&#182;</a></h1>
-<pre><code>[91, 65, 14, 66, 65, 98, 34]
+<h2 id="Q3-1">Q3-1<a class="anchor-link" href="#Q3-1">&#182;</a></h2>
+<pre><code>아래의 CSV 파일을 df_weather 데이타프레임으로 생성하여라. 
+이때 컬럼은 일시, 평균기온, 최고기온, 최저기온 으로만 한다 
 
-max = 98
-min = 14</code></pre>
+기상온도_서울202012.csv</code></pre>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[94]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
@@ -14755,6 +15381,138 @@ min = 14</code></pre>
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[94]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>일시</th>
+      <th>평균기온(℃)</th>
+      <th>최고기온(℃)</th>
+      <th>최저기온(℃)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1907-10-01</td>
+      <td>13.9</td>
+      <td>25.4</td>
+      <td>3.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1907-11-01</td>
+      <td>5.3</td>
+      <td>21.3</td>
+      <td>-8.9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1907-12-01</td>
+      <td>-3.9</td>
+      <td>9.0</td>
+      <td>-20.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1908-01-01</td>
+      <td>-3.5</td>
+      <td>6.2</td>
+      <td>-14.3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1908-02-01</td>
+      <td>-4.0</td>
+      <td>8.4</td>
+      <td>-15.8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q3-2">Q3-2<a class="anchor-link" href="#Q3-2">&#182;</a></h2>
+<pre><code>df_weather 데이타프레임에서 결측값이 각 컬럼별로 몇개가 있는지 출력하여라</code></pre>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[104]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[104]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>일시          8
+평균기온(℃)    33
+최고기온(℃)    33
+최저기온(℃)    33
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14788,41 +15546,52 @@ min = 14</code></pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q10.-&#45796;&#51020;&#44284;-&#44057;&#51008;-3&#44060;&#51032;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54620;-&#54980;-&#45796;&#51020;&#44284;-&#44057;&#51060;-&#54633;&#52432;&#46972;">Q10. &#45796;&#51020;&#44284; &#44057;&#51008; 3&#44060;&#51032; &#45336;&#54028;&#51060; &#48176;&#50676;&#51012; &#49373;&#49457;&#54620; &#54980; &#45796;&#51020;&#44284; &#44057;&#51060; &#54633;&#52432;&#46972;<a class="anchor-link" href="#Q10.-&#45796;&#51020;&#44284;-&#44057;&#51008;-3&#44060;&#51032;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54620;-&#54980;-&#45796;&#51020;&#44284;-&#44057;&#51060;-&#54633;&#52432;&#46972;">&#182;</a></h1>
-<pre><code>[[1, 2, 3],
- [4, 5, 6],
- [7, 8, 9]]
+<h2 id="Q3-3">Q3-3<a class="anchor-link" href="#Q3-3">&#182;</a></h2>
+<pre><code>df_weather 데이타프레임에서 '일시' 컬럼값이 결측값 NaN으로 지정된 데이타를 출력하여라</code></pre>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[112]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
 
 
-[[11, 12, 13],
- [14, 15, 16],
- [17, 18, 19]]
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[112]:</div>
 
 
-[[21, 22, 23],
- [24, 25, 26],
- [27, 28, 29]]
-
- ----------
-  Result1 
-
- [[ 1,  2,  3, 11, 12, 13, 21, 22, 23],
-  [ 4,  5,  6, 14, 15, 16, 24, 25, 26],
-  [ 7,  8,  9, 17, 18, 19, 27, 28, 29]] 
 
 
-  ----------
-  Result2
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Int64Index([1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352], dtype=&#39;int64&#39;)</pre>
+</div>
 
- [[ 1,  2,  3],
-  [ 4,  5,  6],
-  [ 7,  8,  9],
-  [11, 12, 13],
-  [14, 15, 16],
-  [17, 18, 19],
-  [21, 22, 23],
-  [24, 25, 26],
-  [27, 28, 29]]</code></pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q3-4">Q3-4<a class="anchor-link" href="#Q3-4">&#182;</a></h2>
+<pre><code>df_weather 데이타프레임에서 행 모두의 값이 NaN이면 삭제하여라</code></pre>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14839,10 +15608,17 @@ min = 14</code></pre>
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Q3-5">Q3-5<a class="anchor-link" href="#Q3-5">&#182;</a></h2>
+<pre><code>df_weather 데이타프레임에서 결측값을 모두 0으로 변경하여라</code></pre>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[121]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
@@ -14853,32 +15629,31 @@ min = 14</code></pre>
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-Cell-outputWrapper">
 
-     </div>
-</div>
-</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[121]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>일시         0
+평균기온(℃)    0
+최고기온(℃)    0
+최저기온(℃)    0
+dtype: int64</pre>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+</div>
 
-     </div>
 </div>
-</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14898,25 +15673,14 @@ min = 14</code></pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Q11.-&#50500;&#47000;&#50752;-&#44057;&#51060;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54620;-&#54980;">Q11. &#50500;&#47000;&#50752; &#44057;&#51060; &#45336;&#54028;&#51060; &#48176;&#50676;&#51012; &#49373;&#49457;&#54620; &#54980;<a class="anchor-link" href="#Q11.-&#50500;&#47000;&#50752;-&#44057;&#51060;-&#45336;&#54028;&#51060;-&#48176;&#50676;&#51012;-&#49373;&#49457;&#54620;-&#54980;">&#182;</a></h1><h1 id="50&#48372;&#45796;-&#53360;-&#49707;&#51088;&#47564;-&#54596;&#53552;&#47553;&#54616;&#50668;&#46972;.">50&#48372;&#45796; &#53360; &#49707;&#51088;&#47564; &#54596;&#53552;&#47553;&#54616;&#50668;&#46972;.<a class="anchor-link" href="#50&#48372;&#45796;-&#53360;-&#49707;&#51088;&#47564;-&#54596;&#53552;&#47553;&#54616;&#50668;&#46972;.">&#182;</a></h1>
-<pre><code>arr = np.random.choice(100, 40, replace=False)
-
-Before =&gt; 
-
-[40, 63,  8,  2, 35, 84, 72, 48, 78, 86, 87, 58,  0, 49, 14, 55, 11,
-       73, 39, 26, 75, 27, 99, 46, 25, 22, 34, 83, 24, 47, 31, 57, 62, 19,
-       36, 15, 17, 10, 98, 90]
-
-
-After =&gt;
-
-[63, 84, 72, 78, 86, 87, 58, 55, 73, 75, 99, 83, 57, 62, 98, 90]</code></pre>
+<h2 id="Q3-6">Q3-6<a class="anchor-link" href="#Q3-6">&#182;</a></h2>
+<pre><code>df_weather 데이타프레임에서 '일시' 컬럼의 데이타형을 시계열 형태로 변경하고 인덱스로 설정하여라.</code></pre>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[127]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
@@ -14927,42 +15691,189 @@ After =&gt;
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[128]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_weather</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[128]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>일시         datetime64[ns]
+평균기온(℃)           float64
+최고기온(℃)           float64
+최저기온(℃)           float64
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Quiz-12">Quiz 12<a class="anchor-link" href="#Quiz-12">&#182;</a></h1>
-<pre><code>
-kor = np.array( [60,55,70,30,20,90])
-
-
-1. 국어점수가 가장큰값을 구하여라
-2. 국어점수가 80점이상인 값을 구하여라
-3. 국어 점수가 50점이상 80점 이하인 값을 구하여라
-4. 국어점수의 평균을 구하여라
-5. 국어점수의 총합을 구하여라.
-6. 국어점수가 40점이하인 데이터를 삭제하여라
-7. 국어점수가 50점이상인 데이터에 가산점 10%를 부여하여라
-8. 국어점수 top 5를 구하여라
-9. 국어점수가 70점이상이면 '합격' , 아니면 '불합격으로' 아래와 같이 출력하시요
-
-60 '불합격'
-55 '불합격'</code></pre>
+<h2 id="Q3-7">Q3-7<a class="anchor-link" href="#Q3-7">&#182;</a></h2>
+<pre><code>df_weather 데이타프레임에서 2000 이후의 데이타만 출력하여라</code></pre>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[141]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[141]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>평균기온(℃)</th>
+      <th>최고기온(℃)</th>
+      <th>최저기온(℃)</th>
+    </tr>
+    <tr>
+      <th>일시</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>-2.1</td>
+      <td>9.9</td>
+      <td>-12.1</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>-1.7</td>
+      <td>7.5</td>
+      <td>-11.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>6.3</td>
+      <td>18.9</td>
+      <td>-4.8</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>11.9</td>
+      <td>23.5</td>
+      <td>1.8</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>17.5</td>
+      <td>30.5</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-08-01</th>
+      <td>26.5</td>
+      <td>34.5</td>
+      <td>21.5</td>
+    </tr>
+    <tr>
+      <th>2020-09-01</th>
+      <td>21.4</td>
+      <td>29.5</td>
+      <td>13.6</td>
+    </tr>
+    <tr>
+      <th>2020-10-01</th>
+      <td>14.3</td>
+      <td>23.6</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <th>2020-11-01</th>
+      <td>8.0</td>
+      <td>20.0</td>
+      <td>-3.6</td>
+    </tr>
+    <tr>
+      <th>2020-12-01</th>
+      <td>-0.2</td>
+      <td>9.4</td>
+      <td>-11.2</td>
+    </tr>
+  </tbody>
+</table>
+<p>252 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14991,27 +15902,6 @@ kor = np.array( [60,55,70,30,20,90])
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Quiz-13">Quiz 13<a class="anchor-link" href="#Quiz-13">&#182;</a></h1>
-<pre><code>1) 아래 명령을 이용하여 ratings.dat 파일의 데이타를 넘파이 배열로 생성하여라
-
-    np.loadtxt('data/ratings.dat', delimiter='::', dtype=np.int64)
-
-    데이타형태는 다음과 같다. 
-    ratings.dat =&gt; 무비렌즈의 영화평점데이타 
-    (userId / movieId/rating/ timestamp)
-     예) 1::1193::5:: 978300760
-
-2) movieId 가 55인 데이타의 갯수는?
-
-3) movieId 가 55인 데이타의 평균평점은? 
-
-4) timestamp는 시계열데이타이다. timestamp 데이타를 이용하여 97년도 데이타만 추출한 후 
-   총 데이타 갯수와 평균 평점을 구하여라</code></pre>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15040,75 +15930,6 @@ kor = np.array( [60,55,70,30,20,90])
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Quiz-14">Quiz 14<a class="anchor-link" href="#Quiz-14">&#182;</a></h1>
-<pre><code>1) 'jeju2021.csv' 제주의 온도 데이타를 csv 파일로 저장한 후 
-   np.loadtxt() 명령을 이용하여 필요한 컬럼과 데이터만 로딩하여라 
-
-   '일시', '평균기온(℃)', '최고기온(℃)', '최저기온(℃)'
-
-    data = np.loadtxt('data/jeju2021.csv', 
-                        delimiter=',' , 
-                        dtype=np.str ,
-                       usecols=(2,3,5,8))
-
-
-
-2) 1)의 넘파이 배열의 데이타 형태를 실수 형태로 변경하여라 
-   데이타의 결측치나 이상값은 -99로 지정한다. 
-
-[[20210101.0, 6.8, 18.2, -4.6],
- [20201201.0, 8.0, 16.3, -2.8],
- [20201101.0, 14.6, 26.7, 4.8],
- [20201001.0, 18.5, 25.8, 10.2],
- [20200901.0, 22.5, 32.5, 14.9],
- [20200801.0, 28.4, 36.3, 22.3],
- [20200701.0, 23.8, 34.3, 16.8],
- [20200601.0, 22.4, 30.9, 11.7],
- [20200501.0, 18.8, 29.5, 10.3],
- ...
-
-3) 아래의 명령어를 이용하여 데이타값의 소숫점 처리를 3자리로 변경하여라 
-
-np.set_printoptions(precision=3)
-np.set_printoptions(formatter={'float_kind': lambda x: "{0:0.3f}".format(x)})
-
-4) 제주도의 최고 기온은?
-
-5) 2018년도 제주도 기온 데이타만 출력하여라. 
-
-6) 최저 기온이 -5도 이하인 데이타만 출력하여라. 
-
-7) 2018년도 기온 데이타에서 최고 기온이 28도 보다 높은 경우의 데이타만 출력하여라.</code></pre>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Quiz-15">Quiz 15<a class="anchor-link" href="#Quiz-15">&#182;</a></h1>
-<pre><code>birthArr = np.loadtxt('data/births.txt',delimiter=',', dtype=np.int64)
-
-1. 남아 ,여아 출생 평균을 구하여라
-2. 남아출생이 가장많은 top5  를 구하여라(년도와 남아수)
-3. 남아율(%) 을 구하고 각년도별  남아수가 차지하는비율을 데이터로  출력하여라 
-
-년도    남아    여아    남아율
-=================================
-..
-4. 2000년도 이후데이터 에 대해  출생량 을 구하고 
-남아수가 1800000 이상이면 '많음'아니면 '적음' 이라고 출력하여라
-
-
-    남아수 출생량
-2000   1814601   '많음'
-2001   1799049   '적음'
-
-
-5.1800년대,1900년대,2000년대 각 남아,여야수 평균을 구하여라</code></pre>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
