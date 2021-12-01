@@ -1,3 +1,8 @@
+강사님에게 배운 anatomy of a figure
+
+https://matplotlib.org/stable/gallery/showcase/anatomy.html
+
+
 colab matplotlib 한글 폰트 안됨 오류 해결 (아직 해결 안됨)
 
 https://programmers.co.kr/learn/courses/21/lessons/950
